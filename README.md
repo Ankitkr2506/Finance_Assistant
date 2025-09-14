@@ -1,6 +1,6 @@
-This is my personal Finance Assistant
-Demo video:- https://drive.google.com/file/d/1jVLVKhNCUYBZFKDRKuJewiFHGYEfpfve/view?usp=sharing
+This is my personal Finance Assistant.
 
+Demo video:- https://drive.google.com/file/d/1jVLVKhNCUYBZFKDRKuJewiFHGYEfpfve/view?usp=sharing
 
 Deployed link- https://finance-assistant-silk.vercel.app/
 
