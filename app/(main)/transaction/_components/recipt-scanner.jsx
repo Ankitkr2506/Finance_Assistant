@@ -16,13 +16,25 @@ export function ReceiptScanner({ onScanComplete }) {
     data: scannedData,
   } = useFetch(scanReceipt);
 
+  // Convert file → base64 + mimeType → call server action
   const handleReceiptScan = async (file) => {
     if (file.size > 5 * 1024 * 1024) {
       toast.error("File size should be less than 5MB");
       return;
     }
 
-    await scanReceiptFn(file);
+    try {
+      const arrayBuffer = await file.arrayBuffer();
+      const base64String = Buffer.from(arrayBuffer).toString("base64");
+
+      await scanReceiptFn({
+        base64String,
+        type: file.type,
+      });
+    } catch (err) {
+      console.error("Error preparing file:", err);
+      toast.error("Failed to process file");
+    }
   };
 
   useEffect(() => {
@@ -30,7 +42,7 @@ export function ReceiptScanner({ onScanComplete }) {
       onScanComplete(scannedData);
       toast.success("Receipt scanned successfully");
     }
-  }, [scanReceiptLoading, scannedData]);
+  }, [scanReceiptLoading, scannedData, onScanComplete]);
 
   return (
     <div className="flex items-center gap-4">

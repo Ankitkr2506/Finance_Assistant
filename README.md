@@ -1,3 +1,4 @@
-This is AI_Based Finance App , named Welth
+This is my personal Finance Assistant
+Demo video:- 
 
 
