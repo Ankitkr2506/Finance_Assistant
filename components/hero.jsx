@@ -42,7 +42,7 @@ const HeroSection = () => {
               Get Started
             </Button>
           </Link>
-          <Link href="https://www.youtube.com">
+          <Link href="https://drive.google.com/file/d/1jVLVKhNCUYBZFKDRKuJewiFHGYEfpfve/view?usp=sharing">
             <Button size="lg" variant="outline" className="px-8">
               Watch Demo
             </Button>
